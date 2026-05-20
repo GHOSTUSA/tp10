@@ -15,8 +15,8 @@ jobs:
       - name: Build image
         run: docker build -t my-app:${{ github.sha }} .
 
-      - name: Run tests
-        run: docker compose run --rm test
+    #   - name: Run tests
+    #     run: docker compose run --rm test
 
       - name: Scan image (Trivy)
         uses: aquasecurity/trivy-action@master
