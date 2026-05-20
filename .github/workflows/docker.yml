@@ -30,7 +30,7 @@ jobs:
         run: trivy image --format cyclonedx --output sbom.json my-app:${{ github.sha }}
 
       - name: Upload SBOM as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sbom
           path: sbom.json
