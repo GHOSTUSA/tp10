@@ -49,7 +49,8 @@ jobs:
 
       - name: Push to GitHub Container Registry
         run: |
-          IMAGE=ghcr.io/${{ github.repository_owner }}/my-app
+          OWNER=$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')
+          IMAGE=ghcr.io/$OWNER/my-app
           docker tag my-app:${{ github.sha }} "$IMAGE:${{ github.sha }}"
           docker tag my-app:${{ github.sha }} "$IMAGE:latest"
           docker push "$IMAGE:${{ github.sha }}"
