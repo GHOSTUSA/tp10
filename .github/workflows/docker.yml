@@ -19,8 +19,8 @@ jobs:
       - name: Build image
         run: docker build -t my-app:${{ github.sha }} .
 
-    #   - name: Run tests
-    #     run: docker compose run --rm test
+      # - name: Run tests
+      #   run: docker compose run --rm test
 
       - name: Scan image (Trivy)
         uses: aquasecurity/trivy-action@master
@@ -29,7 +29,6 @@ jobs:
           exit-code: '1'
           severity: 'CRITICAL'
           # 11 HiGH
-
 
       - name: Generate SBOM
         run: trivy image --format cyclonedx --output sbom.json my-app:${{ github.sha }}
