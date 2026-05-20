@@ -1,0 +1,21 @@
+{
+  "name": "tp9-optimized-node",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "prom-client": "^15.1.3"
+  },
+  "scripts": {
+     "start": "node serveur.js",
+     "test": "jest --runInBand",
+     "lint": "eslint . --max-warnings=0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0",
+    "jest": "^30.4.2",
+    "supertest": "^7.2.2"
+  }
+}
